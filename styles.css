@@ -5,8 +5,10 @@ div {
     justify-content: center;
 }
 
-@media screen and (-webkit-min-device-pixel-ratio:400px) and (min-resolution:.001dpcm) {
-    #not-chrome {
-        display: none !important;
+@media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
+    @media screen and (max-width: 400px) {
+        #not-chrome {
+            display: none !important;
+        }
     }
 }
