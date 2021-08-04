@@ -49,8 +49,33 @@
     <button onclick="checkBrowser()">
         Detect browser
     </button>
+
+    <p id="browser"></p>
       
+
     <script>
+        var isChromium = window.chrome;
+        var winNav = window.navigator;
+        var vendorName = winNav.vendor;
+        var isOpera = typeof window.opr !== "undefined";
+        var isIEedge = winNav.userAgent.indexOf("Edge") > -1;
+        var isIOSChrome = winNav.userAgent.match("CriOS");
+
+        if (isIOSChrome) {
+            document.getElementById("browser").innerHTML = "chrome ios!"
+        } else if(
+        isChromium !== null &&
+        typeof isChromium !== "undefined" &&
+        vendorName === "Google Inc." &&
+        isOpera === false &&
+        isIEedge === false
+        ) {
+            document.getElementById("browser").innerHTML = "chrome!"
+        } else { 
+            document.getElementById("browser").innerHTML = "not chrome!"
+        }
+    </script>
+    <!-- <script>
         function checkBrowser() {
           
             // Get the user-agent string
@@ -97,7 +122,7 @@
             document.querySelector(".output-firefox").textContent
                         = firefoxAgent;
         }
-    </script>
+    </script> -->
 </body>
   
 </html>
