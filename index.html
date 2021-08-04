@@ -13,8 +13,6 @@
             <p id="GFG_P" style="color:green;font-size: 20px;"></p>
         </div>
         <script>
-            // Opera 8.0+
-            const isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
 
             // Firefox 1.0+
             const isFirefox = typeof InstallTrigger !== 'undefined';
@@ -38,16 +36,18 @@
             // Blink engine detection
             const isBlink = (isChrome || isOpera) && !!window.CSS;
 
+            const isMobile = window.navigator.userAgentData.mobile;
+
 
             let output = 'Detecting browsers by ducktyping:<hr>';
             output += 'isFirefox: ' + isFirefox + '<br>';
             output += 'isChrome: ' + isChrome + '<br>';
             output += 'isSafari: ' + isSafari + '<br>';
-            output += 'isOpera: ' + isOpera + '<br>';
             output += 'isIE: ' + isIE + '<br>';
             output += 'isEdge: ' + isEdge + '<br>';
             output += 'isEdgeChromium: ' + isEdgeChromium + '<br>';
-            output += 'isBlink: ' + isBlink + '<br>';
+            output += 'isBlink: ' + isBlink + '<br><br><br><br>';
+            output += 'mobile?: ' + isMobile;
             document.body.innerHTML = output;
         </script>
     </body>
